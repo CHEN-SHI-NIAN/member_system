@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員系統</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!--link rel="stylesheet" href="style.css"-->
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-    <h1>market monitor</h1>
-    <ul>
-        <li><a href="/">Latest News</a></li>
-        <li><a href="/">Contact Information</a></li>
-    </ul>
+        <h1>market monitor</h1>
+        <ul>
+            <li><a href="/">Latest News</a></li>
+            <li><a href="/">Contact Information</a></li>
+        </ul>
     </header>
-    <nav>
-    </nav>
+    <nav></nav>
     <main>
     <section class="img">
         <img src="{{ url_for('static', filename='images/memecoin-1.jpg') }}" alt="memejpg">
     </section>
     <section class="info">
-    <h1>
+        <h1>Information for this produced</h1>
+        <div class="info-content">
+            <div class="info-item">
+                <h2>Features</h2>
+                <!-- 添加 Features 内容 -->
+            </div>
+            <div class="info-item">
+                <h2>How to use</h2>
+                <ol>
+                    <li>Step 1 Register your account and password</li>
+                    <li>Step 2</li>
+                    <li>Step 3</li>
+                </ol>
+            </div>
+        </div>
     </section>
     <section class="singup">
         <div class="form-container">

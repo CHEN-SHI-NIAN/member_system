@@ -79,8 +79,6 @@ def process_data():
     data = request.json
     address = data['address']
     abi = data['abi']
-
-    # 进行一些处理，例如与区块链交互
     result = f"Processed address: {address} with ABI: {abi}"
 
     return jsonify({'result': result})

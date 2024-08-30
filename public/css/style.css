@@ -69,7 +69,26 @@ header ul {
     object-fit: cover; /* 填滿容器且保持圖片比例 */
     filter: brightness(50%); /* 調整亮度 */
 }
+.info {
+    min-height: 20vh; /* 根據需求調整 */
+    padding: 20px; /* 添加內部邊距以避免內容緊貼邊緣 */
+}
 
+.info h1 {
+    text-align: center; /* 將 h1 內容居中 */
+}
+
+.info-headers {
+    display: flex;           /* 使用 flexbox 布局 */
+    justify-content: space-between; /* 左右對齊 */
+    align-items: center;     /* 垂直居中 */
+    margin: 0 10%;           /* 可根據需求調整左右間距 */
+}
+
+.info-headers h2 {
+    flex: 1;                 /* 使 h2 在兩側均勻分布 */
+    text-align: center;      /* 讓每個 h2 在各自區域內居中 */
+}
 .singup h3 {
     font-size: 45px;
     margin-bottom: 40px;
