@@ -185,9 +185,9 @@ button:hover {
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中 */
     height: 48px; /* 調整高度 */
-    background-color: #b9a889; /* 背景顏色 */
+    background-color: bisque; /* 背景顏色 */
 }
 .footer p {
     font-size: 24px; /* 設定字體大小 */
-    color: #f8f7f7; /* 設定字體顏色 */
+    color: #0e0d0d; /* 設定字體顏色 */
 }
