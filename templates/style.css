@@ -1,0 +1,143 @@
+* {
+    border:0;/*邊框,內邊距,內邊距*/
+    padding:0;/*上 右 下 左*/
+    margin:0;
+}
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    position:absolute;
+    left:120px;
+    top:0;
+    line-height:80px;
+    font-size: 60px;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+h3 {
+    text-align: center;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+header { 
+    background-color: bisque;
+    height:80px;
+    width:100%;
+    position:absolute;
+    z-index: 1;
+}
+header a{
+    color:rgb(59, 50, 117);
+    text-decoration: none; /* 取消底線*/
+}
+header a:hover{
+    text-decoration: underline;
+}
+header li {
+    display:inline;
+    margin-right:2vw;
+}
+header ul {
+    position:absolute;
+    right:5vw;
+    top:0;
+    line-height:80px;
+}
+.img {
+    display: flex; /* 確保內容居中 */
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    height: 30vh;
+}
+
+.img img {
+    max-width: 100%; /* 確保圖片適應容器 */
+    height: auto;
+}
+.singup h3 {
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+label {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #333;
+}
+.singup {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding: 20px;
+    background-color: bisque;
+}
+.form-container {
+    display: flex;
+    gap: 60px; 
+    justify-content: center; 
+}
+.form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    background-color: rgb(240, 238, 233);
+    width: 600px; 
+}
+.form-box form {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input {
+    width: 80%;
+    height: 32px;
+    margin-bottom: 10px;
+}
+.input-container {
+    margin-bottom: 20px;
+}
+.button-container {
+    margin-bottom: 15px;
+}
+button {
+    margin-top: 20px; 
+    width: 60%; 
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #0056b3; /* 鼠标悬停时的效果 */
+}
+.footer {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 100px; /* 調整高度 */
+    background-color: #b9a889; /* 背景顏色 */
+}
+.footer p {
+    font-size: 24px; /* 設定字體大小 */
+    color: #f8f7f7; /* 設定字體顏色 */
+}

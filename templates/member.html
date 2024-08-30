@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員頁面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>HI, {{ nickname }}!</h2></br>
+    <p>please enter the address and ABI</p>
+    <p>If you don't know the address please click the button below</p>
+    <input type="text" id="address" placeholder="Enter address">
+    <input type="text" id="abi" placeholder="Enter ABI">
+    <div class="button-container">
+        <button onclick="submitData()">Submit</button>
+    </div>
+    <div id="result"></div>
+    <div class="button-container">
+        <form action="https://etherscan.io/" method="get" target="_blank">
+            <button type="submit">Inquire</button>
+        </form>
+    </div>
+    <div class="button-container">
+        <form action="/singout" method="post">
+            <button type="submit">home page</button>
+        </form>
+    </div>
+
+    <script>
+        function submitData() {
+            const address = document.getElementById('address').value;
+            const abi = document.getElementById('abi').value;
+
+            fetch('/process_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ address, abi })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = `Result: ${data.result}`;
+            })
+            .catch(error => {
+                document.getElementById('result').innerText = 'Error: ' + error;
+            });
+        }
+    </script>
+</body>
+</html>
