@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員系統</title>
-    <!--link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--link rel="stylesheet" href="style.css"-->
 </head>
 <body>
     <header>
         <h1>market monitor</h1>
         <ul>
-            <li><a href="/">Latest News</a></li>
-            <li><a href="/">Contact Information</a></li>
+            <li><a href="/comingsoon">Latest News</a></li>
+            <li><a href="/comingsoon">Contact Information</a></li>
         </ul>
     </header>
     <nav></nav>
@@ -25,11 +25,24 @@
         <div class="info-content">
             <div class="info-item">
                 <h2>Background Introduction</h2>
-                <h3>簡述程式的背景、目標和需求</h3>
+                <h3>本專案是一個市場監控工具，旨在實時監控以太坊智能合約的行為。用戶可通過輸入合約地址和 ABI，輕鬆獲取合約的可調用函數。</h3>
                 <h2>Key Features</h2>
-                <h3>介紹程式的核心功能</h3>
+                <h3>
+                    1. 帳密比對: 比對帳號密碼並對密碼進行加密。<br>
+                    2. ABI解析: 提取輸入的 ABI 中的可調用函數。<br>
+                    3. 即時結果: 提交數據後即時顯示處理結果和函數列表。<br>
+                    4. 友好界面: 簡潔的前端設計，便於操作。<br>
+                    5. 錯誤處理: 提供錯誤提示，幫助用戶識別問題。<br>
+                </h3>
+
                 <h2>How to Use</h2>
-                <h3> 指導讀者如何使用這些功能</h3>
+                <h3>
+                    1. 訪問頁面: 先註冊帳號並登入進入會員頁面。<br>
+                    2. 輸入地址和 ABI: 分別填寫合約地址和 ABI。<br>
+                    3. 提交數據: 點擊 "Submit" 按鈕。<br>
+                    4. 查看結果: 檢查處理結果和函數列表。<br>
+                    5. 進一步查詢: 可選擇查詢合約詳細信息或返回主頁。<br>
+                </h3>
             </div>
         </div>
     </section>

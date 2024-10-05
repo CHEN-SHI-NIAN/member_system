@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員頁面</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--link rel="stylesheet" href="style.css"-->
 </head>
 <body>
+    <header>
+        <h1>market monitor</h1>
+    </header>
     <h2>HI, {{ nickname }}!</h2></br>
     <p>please enter the address and ABI</p>
-    <p>If you don't know the address please click the button below</p>
+    <p>If you don't know the address please click the button below</p>    
+    <div class="button-container"></div>
+        <form action="https://etherscan.io/" method="get" target="_blank">
+            <button type="submit">Inquire</button>
+        </form>
+    </div>
     <input type="text" id="address" placeholder="Enter address">
     <input type="text" id="abi" placeholder="Enter ABI">
     <div class="button-container">
         <button onclick="submitData()">Submit</button>
     </div>
     <div id="result"></div>
+    <h3>Callable Functions:</h3>
+    <div id="functionsList"></div>
+
     <div class="button-container">
-        <form action="https://etherscan.io/" method="get" target="_blank">
-            <button type="submit">Inquire</button>
-        </form>
-    </div>
-    <div class="button-container">
-        <form action="/singout" method="post">
+        <form action="/signout" method="get">
             <button type="submit">home page</button>
         </form>
     </div>
@@ -30,23 +37,44 @@
     <script>
         function submitData() {
             const address = document.getElementById('address').value;
-            const abi = document.getElementById('abi').value;
+            const abi = JSON.parse(document.getElementById('abi').value); // 將abi解析為JSON對象
 
-            fetch('/process_data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ address, abi })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerText = `Result: ${data.result}`;
-            })
-            .catch(error => {
-                document.getElementById('result').innerText = 'Error: ' + error;
-            });
-        }
+        fetch('/process_data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ address, abi }) // 將address和abi一起發送
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);  // 檢查後端響應
+        
+            // 顯示處理結果
+            document.getElementById('result').innerText = `Result: ${data.result}`;
+        
+            // 顯示可呼叫函數
+            const functionsList = document.getElementById('functionsList');
+            functionsList.innerHTML = ''; // 清空之前的內容
+        
+            if (data.functions.length > 0) {
+                data.functions.forEach(func => {
+                    const funcElement = document.createElement('div');
+                    funcElement.innerText = func;
+                    functionsList.appendChild(funcElement);
+                });
+            } else {
+                functionsList.innerText = 'No callable functions found.';
+            }
+        })
+        .catch(error => {
+            document.getElementById('result').innerText = 'Error: ' + error;
+        });
+    }
+
     </script>
+    <footer class = 'footer'>
+        <p>This website is produced by SHINIAN</p>
+    </footer>
 </body>
 </html>

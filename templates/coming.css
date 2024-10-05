@@ -1,0 +1,38 @@
+* {
+    border:0;/*邊框,內邊距,內邊距*/
+    padding:0;/*上 右 下 左*/
+    margin:0;
+}
+header h1 {
+    position:absolute;
+    left:120px;
+    top:0;
+    line-height:80px;
+    font-size: 60px;
+}
+header { 
+    background-color: bisque;
+    height:80px;
+    width:100%;
+    position:fixed;
+    z-index: 1000;
+}
+header a{
+    color:rgb(59, 50, 117);
+    text-decoration: none; /* 取消底線*/
+}
+header a:hover{
+    text-decoration: underline;
+}
+.footer {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 48px; /* 調整高度 */
+    background-color: bisque; /* 背景顏色 */
+    z-index: 1000;
+}
+.footer p {
+    font-size: 24px; /* 設定字體大小 */
+    color: #0e0d0d; /* 設定字體顏色 */
+}
